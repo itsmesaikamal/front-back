@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// frontend/src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Navbar from './components/Navbar';
+import SalesGrowthRateChart from './components/Charts/SalesGrowthRateChart';
+import NewCustomersChart from './components/Charts/NewCustomersChart';
+import RepeatCustomersChart from './components/Charts/RepeatCustomersChart';
+import CustomerGeographyChart from './components/Charts/CustomerGeographyChart';
+import CustomerLifetimeChart from './components/Charts/CustomerLifetimeChart';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <Navbar />
+            <div className="container mx-auto">
+                <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/sales-growth-rate" element={<SalesGrowthRateChart />} />
+                    <Route path="/new-customers" element={<NewCustomersChart />} />
+                    <Route path="/repeat-customers" element={<RepeatCustomersChart />} />
+                    <Route path="/customer-geography" element={<CustomerGeographyChart />} />
+                    <Route path="/customer-lifetime-value" element={<CustomerLifetimeChart />} />
+                   
+                </Routes>
+            </div>
+        </Router>
+    );
+};
 
 export default App;
