@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import './styles/tailwind.css';
+import 'tailwindcss/tailwind.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css/animate.min.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
